@@ -1,0 +1,10 @@
+---
+name: CARTA
+category: Interactive Apps
+subcategory: Servers
+role: batch_connect
+description: |
+  This app will launch a [CARTA] server
+
+  [CARTA](https://cartavis.org/)
+
