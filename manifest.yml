@@ -6,5 +6,5 @@ role: batch_connect
 description: |
   This app will launch a [CARTA] server
 
-  [CARTA](https://cartavis.org/)
+  [CARTA]: https://cartavis.org/
 
