@@ -1,13 +1,46 @@
 ---
+cluster:
+  - "alvis"
+  - "vera"
 form:
   - cluster
   - auto_accounts
-  - auto_queues
   - bc_num_hours
-  - node_type
+  - resource
+  - version
   - working_dir
   - bc_email_on_started
 attributes:
+  resource:
+    widget: "select"
+    label: "Resource"
+    options:
+      - [ "1 core", "-N 1 -n 1" ]  # vera
+      - [ "2 cores", "-N 1 -n 2" ]  # vera
+      - [ "4 cores", "-N 1 -n 4" ]  # vera
+      - [ "8 cores", "-N 1 -n 8" ]  # vera
+      - [ "16 cores", "-N 1 -n 16" ]  # vera
+      - [ "32 cores", "-N 1 -n 32" ]  # vera
+      - [ "64 cores", "-C ICELAKE -n 64" ]  # vera
+      - [ "GPU:", "x", disabled: true ]
+      - [ "T4:1", "--gpus-per-node=T4:1" ]
+      - [ "A40:1", "--gpus-per-node=A40:1" ]
+      - [ "CPU", "x", disabled: true ]  # alvis
+      - [ "1 core", "-C NOGPU -n 1" ]  # alvis
+      - [ "2 core", "-C NOGPU -n 2" ]  # alvis
+      - [ "4 core", "-C NOGPU -n 4" ]  # alvis
+  version:
+    widget: "select"
+    label: "Runtime"
+    options:
+<% glob_prettify_lookup(["/apps/portal/carta/*.sh"]).each do |pretty_path, path| %>
+      - [ "<%= pretty_path %>", "<%= path %>" ]
+<% end %>
+      - [ "== User specified (create ~/portal/carta/*.sh) ==",  "x", disabled: true ]
+<% glob_prettify_lookup(["#{Dir.home}/portal/carta/*.sh"]).each do |pretty_path, path| %>
+      - [ "<%= pretty_path %>", "<%= path %>" ]
+<% end %>
+    help: "See https://github.com/c3se/bc_c3se_carta for source code and documentation"
   working_dir:
     widget: "path_selector"
     label: "Working Directory"
