@@ -3,10 +3,5 @@
 # Benchmark info
 echo "TIMING - Starting main script at: $(date)"
 
-# if carta is launching from a apptainer container
-# container=/path/to/carta.sif
-# apptainer exec --nv $container /path/to/carta_backend --frontend_folder=/path/to/carta-frontend/build --no_browser --port=$CARTA_PORT
-
-# if you have a native carta installed
-/path/to/carta_backend --frontend_folder=/path/to/carta-frontend/build --no_browser --port=$CARTA_PORT
+source "<%= context.version %>"
 
