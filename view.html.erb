@@ -1,6 +1,13 @@
 <!-- Observe some sources online use /rnode/ instead -->
-<a href="/node/<%= host %>/<%= port %>/?token=<%= password %>" target="_blank" class="btn btn-primary">
-  <button class="btn btn-primary" type="submit">
-    <i class="fa fa-cogs"></i> Connect to CARTA
-  </button>
-</a>
+<div class="flex-container">
+  <a href="/node/<%= host %>/<%= port %>/?token=<%= password %>" target="_blank" class="btn btn-primary">
+    <button class="btn btn-primary" type="submit">
+      <i class="fa fa-cogs"></i> Connect to CARTA
+    </button>
+  </a>
+  <a href="<%= job_stats_link %>" target="_blank" class="btn btn-info">
+    <button class="btn btn-info" type="submit">
+      <i class="fa fa-cogs"></i> Job Statistics
+    </button>
+  </a>
+</div>
