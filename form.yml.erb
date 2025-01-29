@@ -22,10 +22,14 @@ attributes:
         - [ "8 cores", "-N 1 -n 8" ]  # vera
         - [ "16 cores", "-N 1 -n 16" ]  # vera
         - [ "32 cores", "-N 1 -n 32" ]  # vera
-        - [ "64 cores", "-C ICELAKE -n 64" ]  # vera
-      GPU:
-        - [ "T4:1", "--gpus-per-node=T4:1" ]
-        - [ "A40:1", "--gpus-per-node=A40:1" ]
+        - [ "64 cores", "-N 1 -n 64" ]  # vera
+        - [ "1 core ICELAKE", "-N 1 -C ICELAKE -n 1" ]  # vera
+        - [ "2 cores ICELAKE", "-N 1 -C ICELAKE -n 2" ]  # vera
+        - [ "4 cores ICELAKE", "-N 1 -C ICELAKE -n 4" ]  # vera
+        - [ "8 cores ICELAKE", "-N 1 -C ICELAKE -n 8" ]  # vera
+        - [ "16 cores ICELAKE", "-N 1 -C ICELAKE -n 16" ]  # vera
+        - [ "32 cores ICELAKE", "-N 1 -C ICELAKE -n 32" ]  # vera
+        - [ "64 cores ICELAKE", "-N 1 -C ICELAKE -n 64" ]  # vera
       CPU:  # alvis
         - [ "1 core", "-C NOGPU -n 1" ]  # alvis
         - [ "2 core", "-C NOGPU -n 2" ]  # alvis
